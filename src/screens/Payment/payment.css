@@ -6,7 +6,7 @@ body{}
 .checkout-logo img{max-height: 34px;}
 .cus-breadcrumb{padding: 20px 0 0; font-size: 12px; text-align: center;}
 .cus-breadcrumb ul{margin: 0; padding: 0; list-style-type: none;}
-/* .cus-breadcrumb ul li{display: inline-block; width: auto; padding: 0 20px 0 10px; background: url("./images/right-arrow.jpg") no-repeat right 5px;} */
+.cus-breadcrumb ul li{display: inline-block; width: auto; padding: 0 20px 0 10px; background: url("../../../public/images/right-arrow.jpg") no-repeat right 5px;}
 .cus-breadcrumb ul li:first-child{padding-left: 0;}
 .cus-breadcrumb ul li:last-child{padding-right: 0; background: none;}
 .cus-breadcrumb ul li.active{opacity: 0.7;}
@@ -83,7 +83,7 @@ body{}
 .discount-code-btn-row{position: relative;}
 .discount-code-btn-row ul{margin: 0; padding: 0; list-style-type: none;}
 .discount-code-btn-row ul li{position: relative; padding: 10px 5px 0 0; width: auto; display: inline-block;}
-/* .discount-code-btn{background: url("../images/icon-tag.png") no-repeat 10px center #5c528f; background-size: 16px; color: #fff; padding: 8px 32px 8px 32px; font-weight: 700;  border: none; text-transform: uppercase; border-radius: 6px; font-size: 12px;} */
+.discount-code-btn{background: url("../../../public/images/icon-tag.png") no-repeat 10px center #5c528f; background-size: 16px; color: #fff; padding: 8px 32px 8px 32px; font-weight: 700;  border: none; text-transform: uppercase; border-radius: 6px; font-size: 12px;}
 .code-close-btn{position: absolute; right: 15px; top:15px; color: #fff; font-size: 15px; font-weight: 700; cursor: pointer;}
 
 
