@@ -33,8 +33,8 @@ const Shipping = ({stage, setStage}) => {
 
   return (
     <section>
-      <div className="checkout-logo w-100 d-block"><img src="images/logo-blue.png" alt="" className="m-auto d-block" /></div>
-      <div className="cus-breadcrumb w-100 d-block">
+      <div className="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
+      <div className="cus-breadcrumb w-100 d-none d-lg-block">
         <ul>
           <li className={stage == 0? "":"active" }>Shipping</li>
           <li className={stage == 1? "":"active" }>Payment</li>
