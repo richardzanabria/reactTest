@@ -3,104 +3,104 @@ import { Link } from "react-router-dom";
 const Checkout = () => {
   return (
     <>
-    <div class="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
-    <div class="cus-breadcrumb w-100 d-none d-lg-block">
+    <div className="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
+    <div className="cus-breadcrumb w-100 d-none d-lg-block">
       <ul>
         <li>Shipping </li>
-        <li class="active">Payment</li>
+        <li className="active">Payment</li>
       </ul>
     </div>
-    <div class="payment-top w-100 d-block">
+    <div className="payment-top w-100 d-block">
       <ul>
-        <li class="d-flex w-100 flex-wrap justify-content-between"> <span class="left-text">Contact</span> <span><a href="#">Change</a></span> </li>
-        <li class="d-flex w-100 flex-wrap justify-content-between"> <span class="left-text">Ship to</span> <span><a href="#">Change</a></span> </li>
-        <li class="d-flex w-100 flex-wrap justify-content-between"> <span class="left-text">Shipping method</span> <span>Standard</span> <span><a href="#">Change</a></span> </li>
+        <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Contact</span> <span><a href="#">Change</a></span> </li>
+        <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Ship to</span> <span><a href="#">Change</a></span> </li>
+        <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Shipping method</span> <span>Standard</span> <span><a href="#">Change</a></span> </li>
       </ul>
     </div>
-    <div class="payment-card-section w-100 d-block">
-      <div class="checkout-title flex-auto">Payment</div>
+    <div className="payment-card-section w-100 d-block">
+      <div className="checkout-title flex-auto">Payment</div>
       <p> All transactions are secure and encrypted. </p>
-      <div class="payment-card-box w-100 d-block">
-        <div class="payment-card-box-top w-100 d-flex flex-wrap justify-content-between"> <span>Credit card </span> <span><img src="images/card-logo.jpg" alt="" class="img-fluid" /></span> </div>
-        <div class="payment-card-box-data w-100 d-block">
-          <div class="row gx-3">
-            <div class="col-12">
-              <div class="form-group w-100 d-block">
-                <input type="text" id="card-number" placeholder="Card Number" class="form-control checkout" />
+      <div className="payment-card-box w-100 d-block">
+        <div className="payment-card-box-top w-100 d-flex flex-wrap justify-content-between"> <span>Credit card </span> <span><img src="images/card-logo.jpg" alt="" className="img-fluid" /></span> </div>
+        <div className="payment-card-box-data w-100 d-block">
+          <div className="row gx-3">
+            <div className="col-12">
+              <div className="form-group w-100 d-block">
+                <input type="text" id="card-number" placeholder="Card Number" className="form-control checkout" />
               </div>
             </div>
-            <div class="col-12">
-              <div class="form-group w-100 d-block">
-                <input type="text" id="name" placeholder="Name on card" class="form-control checkout" />
+            <div className="col-12">
+              <div className="form-group w-100 d-block">
+                <input type="text" id="name" placeholder="Name on card" className="form-control checkout" />
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group w-100 d-block">
-                <input type="text" id="expiration" placeholder="Expiration date (MM / YY)" class="form-control checkout" />
+            <div className="col-md-6">
+              <div className="form-group w-100 d-block">
+                <input type="text" id="expiration" placeholder="Expiration date (MM / YY)" className="form-control checkout" />
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group w-100 d-block">
-                <input type="text" id="Security-code" placeholder="Security code" class="form-control checkout" />
+            <div className="col-md-6">
+              <div className="form-group w-100 d-block">
+                <input type="text" id="Security-code" placeholder="Security code" className="form-control checkout" />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="billing-address-section w-100 d-block">
-      <div class="checkout-title flex-auto">Billing address</div>
+    <div className="billing-address-section w-100 d-block">
+      <div className="checkout-title flex-auto">Billing address</div>
       <p> Select the address that matches your card or payment method. </p>
-      <div class="radio-button-row w-100 d-block">
-        <label class="control control-radio">
+      <div className="radio-button-row w-100 d-block">
+        <label className="control control-radio">
         Same as shipping address
-        <input type="radio" name="billing-address" checked="checked" />
-        <div class="control-indicator"></div>
+        <input type="radio" name="billing-address" defaultChecked="checked" />
+        <div className="control-indicator"></div>
         </label>
-        <label class="control control-radio">
+        <label className="control control-radio">
         Use a different billing address
         <input type="radio" name="billing-address" id="address-change" />
-        <div class="control-indicator"></div>
+        <div className="control-indicator"></div>
         </label>
       </div>
-      <div class="billing-address-form w-100 d-none">
-        <div class="checkout-form w-100 d-block">
-          <div class="row gx-3">
-            <div class="col-12">
-              <div class="form-group">
-                <select id="country" class="form-select checkout">
+      <div className="billing-address-form w-100 d-none">
+        <div className="checkout-form w-100 d-block">
+          <div className="row gx-3">
+            <div className="col-12">
+              <div className="form-group">
+                <select id="country" className="form-select checkout">
                   <option data-code="US" data-pure-numeric-postal-code="false" value="United States"> United States </option>
                 </select>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="text" id="first-name" class="form-control checkout" placeholder="First name (optional)" />
+            <div className="col-md-6">
+              <div className="form-group">
+                <input type="text" id="first-name" className="form-control checkout" placeholder="First name (optional)" />
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="text" id="last-name" class="form-control checkout" placeholder="Last name" />
+            <div className="col-md-6">
+              <div className="form-group">
+                <input type="text" id="last-name" className="form-control checkout" placeholder="Last name" />
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="text" id="address" class="form-control checkout" placeholder="Address" />
+            <div className="col-md-12">
+              <div className="form-group">
+                <input type="text" id="address" className="form-control checkout" placeholder="Address" />
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="text" id="apartment" class="form-control checkout" placeholder="Apartment, suite, etc. (optional)" />
+            <div className="col-md-12">
+              <div className="form-group">
+                <input type="text" id="apartment" className="form-control checkout" placeholder="Apartment, suite, etc. (optional)" />
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <input type="text" id="city" class="form-control checkout" placeholder="City" />
+            <div className="col-md-4">
+              <div className="form-group">
+                <input type="text" id="city" className="form-control checkout" placeholder="City" />
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <select id="state" class="form-select checkout">
+            <div className="col-md-4">
+              <div className="form-group">
+                <select id="state" className="form-select checkout">
                   <option>State</option>
                   <option data-alternate-values="[&quot;Alabama&quot;]" value="AL">Alabama</option>
                   <option data-alternate-values="[&quot;Alaska&quot;]" value="AK">Alaska</option>
@@ -158,33 +158,33 @@ const Checkout = () => {
                 </select>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <input type="text" id="zipCode	" class="form-control checkout" placeholder="Zip code" />
+            <div className="col-md-4">
+              <div className="form-group">
+                <input type="text" id="zipCode	" className="form-control checkout" placeholder="Zip code" />
               </div>
             </div>
-            <div class="col-12">
-              <div class="form-group">
-                <input type="tel" id="phone" class="form-control checkout" placeholder="Phone" />
+            <div className="col-12">
+              <div className="form-group">
+                <input type="tel" id="phone" className="form-control checkout" placeholder="Phone" />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="btn-row w-100 d-flex justify-content-between">
-      <div class="back-link">
+    <div className="btn-row w-100 d-flex justify-content-between">
+      <div className="back-link">
         <Link to="/">
           <span>Return to shipping</span>
-          {/* <svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+          {/* <svg focusable="false" aria-hidden="true" className="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
             <path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path>
           </svg> */}
 
         </Link>
       </div>
-      <button class="checkout-btn">Checkout now</button>
+      <button className="checkout-btn">Checkout now</button>
     </div>
-    <div class="checkout-footer-link w-100 d-block"> <a href="#">Refund policy</a> <a href="#">Shipping policy</a> <a href="#">Privacy policy</a> <a href="#">Terms of service</a> </div>
+    <div className="checkout-footer-link w-100 d-block"> <a href="#">Refund policy</a> <a href="#">Shipping policy</a> <a href="#">Privacy policy</a> <a href="#">Terms of service</a> </div>
   
     </>
   

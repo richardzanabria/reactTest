@@ -39,68 +39,68 @@ const Shipping = ({setStage}) => {
 
   return (
     <>
-      <div class="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
-      <div class="cus-breadcrumb w-100 d-none d-lg-block">
+      <div className="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
+      <div className="cus-breadcrumb w-100 d-none d-lg-block">
         <ul>
           <li>Shipping </li>
-          <li class="active">Payment</li>
+          <li className="active">Payment</li>
         </ul>
       </div>
 
-      <div class="left-top-row w-100 d-flex flex-wrap justify-content-between">
+      <div className="left-top-row w-100 d-flex flex-wrap justify-content-between">
       </div>
-      <div class="checkout-title flex-auto">Contact</div>
-      <div class="email-box w-100 d-block">
-          <input type="email" id="email" class="form-control checkout" placeholder="Email" onChange={(e) => validateEmail(e)} />
-          <label class="control text-red-800">{message}</label>
+      <div className="checkout-title flex-auto">Contact</div>
+      <div className="email-box w-100 d-block">
+          <input type="email" id="email" className="form-control checkout" placeholder="Email" onChange={(e) => validateEmail(e)} />
+          <label className="control text-red-800">{message}</label>
           
-          <div class="checkbox-row w-100 d-block">
-              <label class="control control-checkbox">
+          <div className="checkbox-row w-100 d-block">
+              <label className="control control-checkbox">
               Email me with news and offers
               <input type="checkbox" />
-              <div class="control-indicator"></div>
+              <div className="control-indicator"></div>
               </label>
           </div>
       </div>
-      <div class="checkout-form-section w-100 d-block">
-        <div class="checkout-title flex-auto">Shipping address</div>
-        <div class="checkout-form w-100 d-block">
-          <div class="row gx-3">
-            <div class="col-12">
-              <div class="form-group">
-                <select id="country" class="form-select checkout">
+      <div className="checkout-form-section w-100 d-block">
+        <div className="checkout-title flex-auto">Shipping address</div>
+        <div className="checkout-form w-100 d-block">
+          <div className="row gx-3">
+            <div className="col-12">
+              <div className="form-group">
+                <select id="country" className="form-select checkout">
                   <option data-code="US" data-pure-numeric-postal-code="false" value="United States"> United States </option>
                 </select>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="text" id="first-name" class="form-control checkout" placeholder="First name (optional)" />
+            <div className="col-md-6">
+              <div className="form-group">
+                <input type="text" id="first-name" className="form-control checkout" placeholder="First name (optional)" />
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="text" id="last-name" class="form-control checkout" placeholder="Last name" onChange={(e) => setLastName(e.target.value)} />
+            <div className="col-md-6">
+              <div className="form-group">
+                <input type="text" id="last-name" className="form-control checkout" placeholder="Last name" onChange={(e) => setLastName(e.target.value)} />
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="text" id="address" class="form-control checkout" placeholder="Address" onChange={(e) => setAddress(e.target.value)}/>
+            <div className="col-md-12">
+              <div className="form-group">
+                <input type="text" id="address" className="form-control checkout" placeholder="Address" onChange={(e) => setAddress(e.target.value)}/>
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="form-group">
-                <input type="text" id="apartment" class="form-control checkout" placeholder="Apartment, suite, etc. (optional)" />
+            <div className="col-md-12">
+              <div className="form-group">
+                <input type="text" id="apartment" className="form-control checkout" placeholder="Apartment, suite, etc. (optional)" />
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <input type="text" id="city" class="form-control checkout" placeholder="City" onChange={(e) => setCity(e.target.value)}/>
+            <div className="col-md-4">
+              <div className="form-group">
+                <input type="text" id="city" className="form-control checkout" placeholder="City" onChange={(e) => setCity(e.target.value)}/>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <select id="state" class="form-select checkout">
+            <div className="col-md-4">
+              <div className="form-group">
+                <select id="state" className="form-select checkout">
                   <option>State</option>
                   <option data-alternate-values="[&quot;Alabama&quot;]" value="AL">Alabama</option>
                   <option data-alternate-values="[&quot;Alaska&quot;]" value="AK">Alaska</option>
@@ -158,19 +158,19 @@ const Shipping = ({setStage}) => {
                 </select>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <input type="text" id="zipCode	" class="form-control checkout" placeholder="Zip code" onChange={(e) => setZipCode(e.target.value)}/>
+            <div className="col-md-4">
+              <div className="form-group">
+                <input type="text" id="zipCode	" className="form-control checkout" placeholder="Zip code" onChange={(e) => setZipCode(e.target.value)}/>
               </div>
             </div>
-            <div class="col-12">
-              <div class="form-group">
-                <input type="tel" id="phone" class="form-control checkout" placeholder="Phone" onChange={(e) => setPhone(e.target.value)}/>
+            <div className="col-12">
+              <div className="form-group">
+                <input type="tel" id="phone" className="form-control checkout" placeholder="Phone" onChange={(e) => setPhone(e.target.value)}/>
               </div>
             </div>
           </div>
-          <div class="btn-row w-100 d-flex justify-content-end">
-            <button class={continueState ? "checkout-btn":"checkout-disable-btn" } disabled={!continueState}  onClick={()=>{
+          <div className="btn-row w-100 d-flex justify-content-end">
+            <button className={continueState ? "checkout-btn":"checkout-disable-btn" } disabled={!continueState}  onClick={()=>{
               setStage(1);
               navigate('/checkout');
             }}>Continue to payment</button>

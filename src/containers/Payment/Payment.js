@@ -10,21 +10,21 @@ const Payment = ({initStage}) => {
 
   return (
     <div id="wrapper w-100 d-block">
-      <div class="container small-container">
-        <div class="mobile-data w-100 d-block d-lg-none">
-          <div class="checkout-logo w-100 d-block"><img src="images/logo-blue.png" alt="" class="m-auto d-block" /></div>
-          <div class="cus-breadcrumb w-100 d-block">
+      <div className="container small-container">
+        <div className="mobile-data w-100 d-block d-lg-none">
+          <div className="checkout-logo w-100 d-block"><img src="images/logo-blue.png" alt="" className="m-auto d-block" /></div>
+          <div className="cus-breadcrumb w-100 d-block">
             <ul>
               <li>Shipping</li>
-              <li class="active">Payment</li>
+              <li className="active">Payment</li>
             </ul>
           </div>
         </div>
-        <div class="d-flex flex-wrap w-100">
-          <div class="right-side flex-auto order-lg-1">
+        <div className="d-flex flex-wrap w-100">
+          <div className="right-side flex-auto order-lg-1">
             <Product />
           </div>
-          <div class="left-side flex-auto order-lg-0">
+          <div className="left-side flex-auto order-lg-0">
             {stage == 0? 
               <Shipping setStage={setStage} /> 
               : <Checkout setStage={setStage} />}
