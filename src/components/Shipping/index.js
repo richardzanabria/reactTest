@@ -1,15 +1,42 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import validator from "validator";
 
 const Shipping = ({setStage}) => {
   const navigate = useNavigate();
 
+  const [message, setMessage] = useState("");
+  const validateEmail = (e) => {
+    const email = e.target.value;
+    if (validator.isEmail(email)) {
+      setMessage("");
+    } else {
+      if(email) {
+        setMessage("Please, enter valid Email!");
+      }
+    }
+  };
+
+
+
   return (
     <>
+
+    <div class="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
+    <div class="cus-breadcrumb w-100 d-none d-lg-block">
+      <ul>
+        <li>Shipping </li>
+        <li class="active">Payment</li>
+      </ul>
+    </div>
+
     <div class="left-top-row w-100 d-flex flex-wrap justify-content-between">
     </div>
     <div class="checkout-title flex-auto">Contact</div>
     <div class="email-box w-100 d-block">
-        <input type="email" id="email" class="form-control checkout" placeholder="Email" />
+        <input type="email" id="email" class="form-control checkout" placeholder="Email" onChange={(e) => validateEmail(e)} />
+        <label class="control text-red-800">{message}</label>
+        
         <div class="checkbox-row w-100 d-block">
             <label class="control control-checkbox">
             Email me with news and offers

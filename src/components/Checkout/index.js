@@ -1,7 +1,15 @@
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   return (
     <>
+    <div class="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
+    <div class="cus-breadcrumb w-100 d-none d-lg-block">
+      <ul>
+        <li>Shipping </li>
+        <li class="active">Payment</li>
+      </ul>
+    </div>
     <div class="payment-top w-100 d-block">
       <ul>
         <li class="d-flex w-100 flex-wrap justify-content-between"> <span class="left-text">Contact</span> <span><a href="#">Change</a></span> </li>
@@ -165,11 +173,14 @@ const Checkout = () => {
       </div>
     </div>
     <div class="btn-row w-100 d-flex justify-content-between">
-      <div class="back-link"><a href="#">
-        <svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-          <path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path>
-        </svg>
-        Return to shipping</a></div>
+      <div class="back-link">
+        <Link to="/">
+          <svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+            <path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path>
+          </svg>
+        Return to shipping
+        </Link>
+      </div>
       <button class="checkout-btn">Checkout now</button>
     </div>
     <div class="checkout-footer-link w-100 d-block"> <a href="#">Refund policy</a> <a href="#">Shipping policy</a> <a href="#">Privacy policy</a> <a href="#">Terms of service</a> </div>
