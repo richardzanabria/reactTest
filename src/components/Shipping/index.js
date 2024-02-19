@@ -1,21 +1,40 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import validator from "validator";
 
 const Shipping = ({setStage}) => {
   const navigate = useNavigate();
 
+  const [continueState, setContinueState] = useState(false)
   const [message, setMessage] = useState("");
+  const [emailAddr, setEmailAddr] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [city, setCity] = useState("");
+  const [zipCode, setZipCode] = useState("");
+
+
+  useEffect(() => {
+    if(emailAddr && lastName && address && phone && city && zipCode) {
+      setContinueState(true)
+    }
+
+  }, [emailAddr, lastName, address, phone, city, zipCode])
+
+
   const validateEmail = (e) => {
     const email = e.target.value;
     if (validator.isEmail(email)) {
       setMessage("");
+      setEmailAddr(email)
     } else {
       if(email) {
         setMessage("Please, enter valid Email!");
       }
     }
   };
+
 
 
   return (
@@ -61,12 +80,12 @@ const Shipping = ({setStage}) => {
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <input type="text" id="last-name" class="form-control checkout" placeholder="Last name" />
+                <input type="text" id="last-name" class="form-control checkout" placeholder="Last name" onChange={(e) => setLastName(e.target.value)} />
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
-                <input type="text" id="address" class="form-control checkout" placeholder="Address" />
+                <input type="text" id="address" class="form-control checkout" placeholder="Address" onChange={(e) => setAddress(e.target.value)}/>
               </div>
             </div>
             <div class="col-md-12">
@@ -76,7 +95,7 @@ const Shipping = ({setStage}) => {
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <input type="text" id="city" class="form-control checkout" placeholder="City" />
+                <input type="text" id="city" class="form-control checkout" placeholder="City" onChange={(e) => setCity(e.target.value)}/>
               </div>
             </div>
             <div class="col-md-4">
@@ -141,17 +160,17 @@ const Shipping = ({setStage}) => {
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <input type="text" id="zipCode	" class="form-control checkout" placeholder="Zip code" />
+                <input type="text" id="zipCode	" class="form-control checkout" placeholder="Zip code" onChange={(e) => setZipCode(e.target.value)}/>
               </div>
             </div>
             <div class="col-12">
               <div class="form-group">
-                <input type="tel" id="phone" class="form-control checkout" placeholder="Phone" />
+                <input type="tel" id="phone" class="form-control checkout" placeholder="Phone" onChange={(e) => setPhone(e.target.value)}/>
               </div>
             </div>
           </div>
           <div class="btn-row w-100 d-flex justify-content-end">
-            <button class="checkout-btn" onClick={()=>{
+            <button class={continueState ? "checkout-btn":"checkout-disable-btn" } disabled={!continueState}  onClick={()=>{
               setStage(1);
               navigate('/checkout');
             }}>Continue to payment</button>

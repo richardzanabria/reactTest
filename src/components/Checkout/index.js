@@ -175,10 +175,11 @@ const Checkout = () => {
     <div class="btn-row w-100 d-flex justify-content-between">
       <div class="back-link">
         <Link to="/">
-          <svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+          <span>Return to shipping</span>
+          {/* <svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
             <path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path>
-          </svg>
-        Return to shipping
+          </svg> */}
+
         </Link>
       </div>
       <button class="checkout-btn">Checkout now</button>

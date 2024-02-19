@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from './screens/Home';
-import Payment from './screens/Payment/Payment';
-import NoPage from './screens/NoPage';
+import Home from './containers/Home';
+import Payment from './containers/Payment/Payment';
+import NoPage from './containers/NoPage';
 import { useEffect } from "react";
 
 function App() {
