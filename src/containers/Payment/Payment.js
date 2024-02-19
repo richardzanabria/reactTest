@@ -1,9 +1,8 @@
+import { useEffect, useState } from 'react';
 import Shipping from '../../components/Shipping';
 import Checkout from '../../components/Checkout';
 import Product from '../../components/Product';
-
 import './payment.css';
-import { useState } from 'react';
 
 const Payment = ({initStage}) => {
   const [stage, setStage] = useState(initStage);
@@ -15,8 +14,8 @@ const Payment = ({initStage}) => {
           <div className="checkout-logo w-100 d-block"><img src="images/logo-blue.png" alt="" className="m-auto d-block" /></div>
           <div className="cus-breadcrumb w-100 d-block">
             <ul>
-              <li>Shipping</li>
-              <li className="active">Payment</li>
+              <li className={stage == 0? "":"active" }>Shipping</li>
+              <li className={stage == 1? "":"active" }>Payment</li>
             </ul>
           </div>
         </div>
@@ -25,9 +24,11 @@ const Payment = ({initStage}) => {
             <Product />
           </div>
           <div className="left-side flex-auto order-lg-0">
-            {stage == 0? 
-              <Shipping setStage={setStage} /> 
-              : <Checkout setStage={setStage} />}
+            {
+              stage == 0? 
+              <Shipping setStage={setStage} stage={stage} /> : 
+              <Checkout setStage={setStage} stage={stage}/>
+            }
           </div>
         </div>
       </div>

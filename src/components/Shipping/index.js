@@ -2,9 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import validator from "validator";
 
-const Shipping = ({setStage}) => {
+const Shipping = ({stage, setStage}) => {
   const navigate = useNavigate();
-
   const [continueState, setContinueState] = useState(false)
   const [message, setMessage] = useState("");
   const [emailAddr, setEmailAddr] = useState("");
@@ -14,14 +13,11 @@ const Shipping = ({setStage}) => {
   const [city, setCity] = useState("");
   const [zipCode, setZipCode] = useState("");
 
-
   useEffect(() => {
     if(emailAddr && lastName && address && phone && city && zipCode) {
       setContinueState(true)
     }
-
   }, [emailAddr, lastName, address, phone, city, zipCode])
-
 
   const validateEmail = (e) => {
     const email = e.target.value;
@@ -35,18 +31,15 @@ const Shipping = ({setStage}) => {
     }
   };
 
-
-
   return (
-    <>
-      <div className="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
-      <div className="cus-breadcrumb w-100 d-none d-lg-block">
+    <section>
+      <div className="checkout-logo w-100 d-block"><img src="images/logo-blue.png" alt="" className="m-auto d-block" /></div>
+      <div className="cus-breadcrumb w-100 d-block">
         <ul>
-          <li>Shipping </li>
-          <li className="active">Payment</li>
+          <li className={stage == 0? "":"active" }>Shipping</li>
+          <li className={stage == 1? "":"active" }>Payment</li>
         </ul>
       </div>
-
       <div className="left-top-row w-100 d-flex flex-wrap justify-content-between">
       </div>
       <div className="checkout-title flex-auto">Contact</div>
@@ -177,7 +170,7 @@ const Shipping = ({setStage}) => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 
