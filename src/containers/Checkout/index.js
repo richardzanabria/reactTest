@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/footer";
+import Navbar from "../../components/Navbar";
 
 const Checkout = ({stage, setStage}) => {
   return (
     <section>
-      <div className="checkout-logo w-100 d-none d-lg-block"><img src="images/logo-blue.png" alt="" /></div>
-      <div className="cus-breadcrumb w-100 d-none d-lg-block">
-        <ul>
-          <li className={stage == 0? "":"active" }>Shipping</li>
-          <li className={stage == 1? "":"active" }>Payment</li>
-        </ul>
-      </div>
+      <Navbar stage={stage} />
       <div className="payment-top w-100 d-block">
         <ul>
           <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Contact</span> <span><a href="#">Change</a></span> </li>
@@ -53,16 +49,17 @@ const Checkout = ({stage, setStage}) => {
         <p> Select the address that matches your card or payment method. </p>
         <div className="radio-button-row w-100 d-block">
           <label className="control control-radio">
-          Same as shipping address
-          <input type="radio" name="billing-address" defaultChecked="checked" />
-          <div className="control-indicator"></div>
+            Same as shipping address
+            <input type="radio" name="billing-address" defaultChecked="checked" />
+            <div className="control-indicator"></div>
           </label>
           <label className="control control-radio">
-          Use a different billing address
-          <input type="radio" name="billing-address" id="address-change" />
-          <div className="control-indicator"></div>
+            Use a different billing address
+            <input type="radio" name="billing-address" id="address-change" />
+            <div className="control-indicator"></div>
           </label>
         </div>
+
         <div className="billing-address-form w-100 d-none">
           <div className="checkout-form w-100 d-block">
             <div className="row gx-3">
@@ -171,6 +168,7 @@ const Checkout = ({stage, setStage}) => {
             </div>
           </div>
         </div>
+      
       </div>
       <div className="btn-row w-100 d-flex justify-content-between">
         <div className="back-link">
@@ -183,7 +181,8 @@ const Checkout = ({stage, setStage}) => {
         </div>
         <button className="checkout-btn">Checkout now</button>
       </div>
-      <div className="checkout-footer-link w-100 d-block"> <a href="#">Refund policy</a> <a href="#">Shipping policy</a> <a href="#">Privacy policy</a> <a href="#">Terms of service</a> </div>  
+      
+      <Footer />
     </section>  
   );
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Shipping from '../../components/Shipping';
-import Checkout from '../../components/Checkout';
-import Product from '../../components/Product';
+import Shipping from '../../containers/Shipping';
+import Checkout from '../../containers/Checkout';
+import Product from '../../containers/Product';
 import './payment.css';
 
 const Payment = ({initStage}) => {
