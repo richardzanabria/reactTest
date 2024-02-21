@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import validator from "validator";
-import Footer from '../../components/Footer/footer';
+import Footer from '../../components/Footer';
 import Dropdown from '../../components/Dropdown';
 import Navbar from '../../components/Navbar';
 

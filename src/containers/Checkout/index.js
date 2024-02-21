@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/footer";
+import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
 const Checkout = ({stage, setStage}) => {
