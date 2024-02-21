@@ -138,7 +138,7 @@
 }
 .right-side-top .product-thumb .cart-item {
   @apply w-[18px] h-[18px] absolute text-white text-center text-[10px] rounded-[50%] -right-2.5 -top-2.5;
-background: #000;
+  background: #000;
 }
 .right-side-top .product-name {
   @apply text-base;
@@ -157,7 +157,7 @@ background: #000;
 }
 .discount-box button {
   @apply w-[90px] absolute h-full text-white font-medium uppercase text-sm inline-block no-underline text-center p-0 rounded-[5px] border-[none] right-0 top-0 hover:text-white;
-background: #4e00ff;
+  background: #4e00ff;
 }
 .discount-box button:hover {
   background: #1a0053;
@@ -197,7 +197,7 @@ background: #4e00ff;
   background: #f4f3f0;
 }
 .payment-card-box-top {
-@apply px-[15px] py-[13px] border-b-[#a9a9a9] border-b border-solid;
+  @apply px-[15px] py-[13px] border-b-[#a9a9a9] border-b border-solid;
   background: #fff;
 }
 .payment-card-box-data {
@@ -240,7 +240,11 @@ background: #4e00ff;
 .discount-code-btn-row ul li {
   @apply relative w-auto inline-block pl-0 pr-[5px] pt-2.5 pb-0;
 }
-.discount-code-btn{background: url("../../../public/images/icon-tag.png") no-repeat 10px center #5c528f; background-size: 16px; color: #fff; padding: 8px 32px 8px 32px; font-weight: 700;  border: none; text-transform: uppercase; border-radius: 6px; font-size: 12px;}
+.discount-code-btn {
+  @apply text-white font-bold uppercase text-xs px-8 py-2 rounded-md border-[none];
+  background: url("../../../public/images/icon-tag.png") no-repeat 10px center #5c528f;
+  background-size: 16px;
+}
 .code-close-btn {
   @apply absolute text-white text-[15px] font-bold cursor-pointer right-[15px] top-[15px];
 }
@@ -248,25 +252,25 @@ background: #4e00ff;
 
 @media screen and (min-width: 992px) {
   .small-container {
-	@apply max-w-[1000px];
+	  @apply max-w-[1000px];
   }
   .cus-breadcrumb {
-	@apply text-left;
+	  @apply text-left;
   }
   .left-side {
-	@apply w-[55%] pl-0 pr-[50px] pt-10 pb-16 border-r-[#e0dfdd] border-t-[none] border-r border-solid;
+	  @apply w-[55%] pl-0 pr-[50px] pt-10 pb-16 border-r-[#e0dfdd] border-t-[none] border-r border-solid;
   }
   .right-side {
-	@apply w-[45%] pl-[50px] pr-0 pt-16 pb-0;
+	  @apply w-[45%] pl-[50px] pr-0 pt-16 pb-0;
   }
   .discount-box {
-	@apply mt-20 mb-0 mx-0;
+	  @apply mt-20 mb-0 mx-0;
   }
   .checkout-footer-link {
-	@apply mt-[84px] mb-0 mx-0 pt-[15px] pb-0 px-0;
+	  @apply mt-[84px] mb-0 mx-0 pt-[15px] pb-0 px-0;
   }
   .checkout-footer-link a {
-	@apply ml-0 mr-5 my-0;
+	  @apply ml-0 mr-5 my-0;
   }
   .left-top-row {
     @apply pt-4 pb-0 px-0;
