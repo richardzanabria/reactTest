@@ -14,7 +14,7 @@ const Shipping = ({stage, setStage}) => {
   const shippingInfo = useSelector((state) => state.contactInfo.shippingAddr)
   const [continueState, setContinueState] = useState(true)
   const [message, setMessage] = useState("");
-  const [emailAddr, setEmailAddr] = useState("");
+  const [emailAddr, setEmailAddr] = useState(contactMail);
   const [addrInfo, setAddrInfo] = useState(shippingInfo);
   const [showWarning, setShowWarning] = useState(false);
 
@@ -40,6 +40,7 @@ const Shipping = ({stage, setStage}) => {
       dispatch(addShippingAddr(addrInfo))
       setStage(1);
       setShowWarning(false)
+      setMessage("")
       navigate('/checkout');
     } else {
       setShowWarning(true)

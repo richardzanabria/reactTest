@@ -1,26 +1,39 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import AddressForm from '../../components/AddressForm';
 import ContactInfo from "../../components/ContactInfo";
-
+import { addBillingAddr } from '../../reducer'
 
 const Checkout = ({stage, setStage}) => {
+  const dispatch = useDispatch()
+  const billingInfo = useSelector((state) => state.contactInfo.billingAddr)
+  const shippingInfo = useSelector((state) => state.contactInfo.shippingAddr)
   const [showAddrForm, setShowAddrForm] = useState(false);
+  const [addrInfo, setAddrInfo] = useState(billingInfo);
+  const [showWarning, setShowWarning] = useState(false);
+
+  const onCheckout = () => {
+    if(showAddrForm) {       // Use different billing address
+      const {lastName, address, city, zipCode, phoneNum} = addrInfo
+      if(lastName && address && phoneNum && city && zipCode) {
+        dispatch(addBillingAddr(addrInfo))
+        setShowWarning(false)
+      } else {
+        setShowWarning(true)
+      }
+    } else {                 // Use same as shipping address
+      dispatch(addBillingAddr(shippingInfo))
+      setShowWarning(false)
+    }
+  }
 
   return (
     <section>
       <Navbar stage={stage} />
       <ContactInfo />
-      {/* <div className="payment-top w-100 d-block">
-        <ul>
-          <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Contact</span><span>{contactMail}</span>  <span><a href="#">Change</a></span> </li>
-          <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Ship to</span> <span><a href="#">Change</a></span> </li>
-          <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Shipping method</span> <span>Standard</span> <span><a href="#">Change</a></span> </li>
-        </ul>
-      </div> */}
       <div className="payment-card-section w-100 d-block">
         <div className="checkout-title flex-auto">Payment</div>
         <p> All transactions are secure and encrypted. </p>
@@ -70,7 +83,7 @@ const Checkout = ({stage, setStage}) => {
         { showAddrForm ? 
           <div className="billing-address-form w-100">
             <div className="checkout-form w-100 d-block">
-              <AddressForm />
+              <AddressForm addrInfo={addrInfo} setAddrInfo={setAddrInfo} showWarning={showWarning} />
             </div>
           </div> : null }
       </div>
@@ -83,7 +96,7 @@ const Checkout = ({stage, setStage}) => {
             <span>Return to shipping</span>
           </Link>
         </div>
-        <button className="checkout-btn">Checkout now</button>
+        <button className="checkout-btn" onClick={() => onCheckout()}>Checkout now</button>
       </div>
       
       <Footer />
