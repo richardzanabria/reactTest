@@ -1,24 +1,26 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux'
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import AddressForm from '../../components/AddressForm';
+import ContactInfo from "../../components/ContactInfo";
 
 
 const Checkout = ({stage, setStage}) => {
   const [showAddrForm, setShowAddrForm] = useState(false);
 
-
   return (
     <section>
       <Navbar stage={stage} />
-      <div className="payment-top w-100 d-block">
+      <ContactInfo />
+      {/* <div className="payment-top w-100 d-block">
         <ul>
-          <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Contact</span> <span><a href="#">Change</a></span> </li>
+          <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Contact</span><span>{contactMail}</span>  <span><a href="#">Change</a></span> </li>
           <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Ship to</span> <span><a href="#">Change</a></span> </li>
           <li className="d-flex w-100 flex-wrap justify-content-between"> <span className="left-text">Shipping method</span> <span>Standard</span> <span><a href="#">Change</a></span> </li>
         </ul>
-      </div>
+      </div> */}
       <div className="payment-card-section w-100 d-block">
         <div className="checkout-title flex-auto">Payment</div>
         <p> All transactions are secure and encrypted. </p>

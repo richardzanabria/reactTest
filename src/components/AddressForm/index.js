@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Dropdown from "../Dropdown";
 
-function AddressForm({setLastName, setAddress, setPhone, setCity, setZipCode}) {
+function AddressForm({addrInfo, setAddrInfo, showWarning}) {
 
   return (
     <div className="row gx-3">
@@ -19,12 +19,14 @@ function AddressForm({setLastName, setAddress, setPhone, setCity, setZipCode}) {
       </div>
       <div className="col-md-6">
         <div className="form-group">
-          <input type="text" id="last-name" className="form-control checkout" placeholder="Last name" onChange={(e) => setLastName(e.target.value)} />
+          <input type="text" id="last-name" className={(showWarning && !addrInfo.lastName)? "form-control checkout warning":"form-control checkout"} placeholder="Last name" 
+            defaultValue={addrInfo.lastName} onChange={(e) => setAddrInfo({...addrInfo, lastName: e.target.value })} />
         </div>
       </div>
       <div className="col-md-12">
         <div className="form-group">
-          <input type="text" id="address" className="form-control checkout" placeholder="Address" onChange={(e) => setAddress(e.target.value)}/>
+          <input type="text" id="address" className={(showWarning && !addrInfo.address)? "form-control checkout warning":"form-control checkout"} placeholder="Address" defaultValue={addrInfo.address}
+            onChange={(e) => setAddrInfo({...addrInfo, address: e.target.value })} />
         </div>
       </div>
       <div className="col-md-12">
@@ -34,7 +36,8 @@ function AddressForm({setLastName, setAddress, setPhone, setCity, setZipCode}) {
       </div>
       <div className="col-md-4">
         <div className="form-group">
-          <input type="text" id="city" className="form-control checkout" placeholder="City" onChange={(e) => setCity(e.target.value)}/>
+          <input type="text" id="city" className={(showWarning && !addrInfo.city)? "form-control checkout warning":"form-control checkout"} placeholder="City" 
+            defaultValue={addrInfo.city} onChange={(e) => setAddrInfo({...addrInfo, city: e.target.value })} />
         </div>
       </div>
       <div className="col-md-4">
@@ -42,12 +45,14 @@ function AddressForm({setLastName, setAddress, setPhone, setCity, setZipCode}) {
       </div>
       <div className="col-md-4">
         <div className="form-group">
-          <input type="text" id="zipCode	" className="form-control checkout" placeholder="Zip code" onChange={(e) => setZipCode(e.target.value)}/>
+          <input type="text" id="zipCode" className={(showWarning && !addrInfo.zipCode)? "form-control checkout warning":"form-control checkout"} placeholder="Zip code" 
+            defaultValue={addrInfo.zipCode} onChange={(e) => setAddrInfo({...addrInfo, zipCode: e.target.value })} />
         </div>
       </div>
       <div className="col-12">
         <div className="form-group">
-          <input type="tel" id="phone" className="form-control checkout" placeholder="Phone" onChange={(e) => setPhone(e.target.value)}/>
+          <input type="tel" id="phone" className={(showWarning && !addrInfo.phoneNum)? "form-control checkout warning":"form-control checkout"} placeholder="Phone" 
+            defaultValue={addrInfo.phoneNum} onChange={(e) => setAddrInfo({...addrInfo, phoneNum: e.target.value })} />
         </div>
       </div>
     </div>

@@ -55,6 +55,11 @@
 .form-select.checkout:focus {
   @apply border shadow-none border-solid border-black;
 }
+.form-control.checkout.warning,
+.form-select.checkout.warning {
+  @apply border shadow-none border-solid border-red-700;
+}
+
 .checkbox-row {
   @apply pt-2.5 pb-0 px-0;
 }
