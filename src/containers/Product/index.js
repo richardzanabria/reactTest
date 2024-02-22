@@ -3,17 +3,21 @@ import DiscountCode from "../../components/DiscountCode";
 
 
 const Product = () => {
-
   const [discountCodes, setDiscountCodes] = useState(["75%", "20%", "40%"]);
+  const [curDiscountCode, setCurDiscountCode] = useState("");
 
   useEffect(() => {
-    console.log("set discount")
+    console.log("set discount:", discountCodes)
   }, [discountCodes])
 
   const removeDiscountCode = (idx) => {
     let newCodes = [...discountCodes];
     newCodes.splice(idx, 1);
     setDiscountCodes(newCodes);
+  }
+
+  const addDiscountCode = (newCode) => {
+    setDiscountCodes([...discountCodes, newCode])
   }
 
   return (
@@ -25,8 +29,8 @@ const Product = () => {
         <div className="product-price"><span>$395</span> $99.00</div>
       </div>
       <div className="discount-box w-100 d-block">
-        <input type="text" className="form-control checkout" placeholder="Discount code" />
-        <button>Apply</button>
+        <input type="text" className="form-control checkout" placeholder="Discount code" onChange={(e) => {setCurDiscountCode(e.target.value)}} />
+        <button onClick={() => addDiscountCode(curDiscountCode)}>Apply</button>
       </div>
       <DiscountCode discountCodes={discountCodes} removeDiscountCode={removeDiscountCode} />
       <div className="total-box-row w-100 d-block">
