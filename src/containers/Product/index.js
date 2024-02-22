@@ -6,10 +6,6 @@ const Product = () => {
   const [discountCodes, setDiscountCodes] = useState(["75%", "20%", "40%"]);
   const [curDiscountCode, setCurDiscountCode] = useState("");
 
-  useEffect(() => {
-    console.log("set discount:", discountCodes)
-  }, [discountCodes])
-
   const removeDiscountCode = (idx) => {
     let newCodes = [...discountCodes];
     newCodes.splice(idx, 1);

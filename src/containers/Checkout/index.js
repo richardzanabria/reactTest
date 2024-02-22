@@ -16,7 +16,7 @@ const Checkout = ({stage, setStage}) => {
   const [showWarning, setShowWarning] = useState(false);
 
   const onCheckout = () => {
-    if(showAddrForm) {       // Use different billing address
+    if(showAddrForm) {  // Use different billing address
       const {lastName, address, city, zipCode, phoneNum} = addrInfo
       if(lastName && address && phoneNum && city && zipCode) {
         dispatch(addBillingAddr(addrInfo))
@@ -24,7 +24,7 @@ const Checkout = ({stage, setStage}) => {
       } else {
         setShowWarning(true)
       }
-    } else {                 // Use same as shipping address
+    } else {  // Use same as shipping address
       dispatch(addBillingAddr(shippingInfo))
       setShowWarning(false)
     }
