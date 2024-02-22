@@ -83,12 +83,17 @@
   @apply opacity-60 pointer-events-none;
   background: #e6e6e6;
 }
-.control-checkbox .control-indicator:after {
+
+
+/* .control-checkbox .control-indicator:after {
   @apply w-[5px] h-2 rotate-45 border-[solid] border-[0_2px_2px_0] left-[7px] top-1;
-}
+} */
+
+
+.control-checkbox .control-indicator:after {left: 7px; top: 4px; width: 5px; height: 8px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg);}
 .control-checkbox input:disabled ~ .control-indicator:after {
   @apply border-black;
-}
+} 
 .control-radio .control-indicator:after {
   background: #fff;
 }
@@ -178,7 +183,7 @@
   @apply list-none m-0 p-0;
 }
 .payment-top ul li {
-  @apply w-full px-0 py-[15px] border-b-[#a9a9a9] border-b border-solid last:border-[none];
+  @apply w-full px-0 py-[15px] border-b-[#a9a9a9] border-b border-solid last:border-none;
 }
 .payment-top ul li .left-text {
   @apply opacity-70;
@@ -210,13 +215,13 @@
   @apply text-sm m-0 p-0;
 }
 .radio-button-row {
-  @apply border mt-5 mb-0 mx-0 border-b-[none] border-solid border-[#a9a9a9];
+  @apply border mt-5 mb-0 mx-0 border-solid border-[#a9a9a9] border-b-0;
 }
 .radio-button-row .control-radio {
   @apply pl-[50px] pr-[15px] py-[15px] border-b-[#a9a9a9] border-b border-solid;
 }
 .billing-address-form {
-  @apply border pt-[5px] pb-[15px] px-[15px] border-t-[none] border-solid border-[#a9a9a9];
+  @apply border pt-[5px] pb-[15px] px-[15px] border-t-0 border-solid border-[#a9a9a9];
   background: #f4f3f0;
 }
 .billing-address-form .checkout-form {
