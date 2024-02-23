@@ -13,7 +13,9 @@ const Product = () => {
   }
 
   const addDiscountCode = (newCode) => {
-    setDiscountCodes([...discountCodes, newCode])
+    if(newCode) {
+      setDiscountCodes([...discountCodes, newCode])
+    }
   }
 
   return (
